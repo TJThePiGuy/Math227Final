@@ -14,10 +14,12 @@ for year in range(2002, 2024):
     with open(f'rawRetroData/{year}eve/{year}.csv', 'r',) as eventFile:
         eventReader = csv.reader(eventFile)
         for line in eventReader:
-            if line[8] in plateAppearances.keys():
+            if line[-2] == "T" and line[8] in plateAppearances.keys():
                 plateAppearances[line[8]].append(line[5])
     
     yearData[year] = plateAppearances
 
 with open('allPlayer.pickle', 'wb') as f:
     pickle.dump(yearData, f, pickle.HIGHEST_PROTOCOL)
+
+print(len(yearData[2009]['branr001']))
