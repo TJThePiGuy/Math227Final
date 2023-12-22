@@ -64,6 +64,10 @@ headers = [
     "AVG",
     "OBP",
     "SLG",
+    "O-Swing%",
+    "Z-Swing%",
+    "Swing%",
+    "Zone%",
     "Mean Sim OBP",
     "Max Sim OBP",
     "Min Sim OBP",
@@ -107,6 +111,10 @@ with open("sims\\allSims.csv", "w", newline="\n") as everyYearFile:
                 playerData["OBP"] = actualOBP
                 playerData["AVG"] = avg
                 playerData["SLG"] = slg
+                playerData['O-Swing%'] = oSwing
+                playerData['Z-Swing%'] = zSwing
+                playerData['Swing%'] = swing
+                playerData['Zone%'] = zone
 
                 sequences = currentYearData[IDrs]
                 atBats = len(sequences)
@@ -123,7 +131,7 @@ with open("sims\\allSims.csv", "w", newline="\n") as everyYearFile:
                 maxWalks = max(sims)
                 minWalks = min(sims)
                 playerData["At-Bats"] = atBats
-
+    
                 avgOBP = avgWalks / atBats
                 maxOBP = maxWalks / atBats
                 minOBP = minWalks / atBats

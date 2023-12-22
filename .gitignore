@@ -1,4 +1,6 @@
-rawRetroData
 final
-sims\~$allSimsAnalysis.xlsx
 sims\allSimsAnalysis.xlsx
+rawRetroData/*/*.eva
+rawRetroData/*/*.evn
+rawRetroData/*/*.ros
+rawRetroData/*/TEAM*
